@@ -25,6 +25,4 @@ hs_err_pid*
 .idea
 *.iml
 *.xml
-*target/
-
-target
+target/
