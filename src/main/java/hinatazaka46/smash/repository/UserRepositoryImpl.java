@@ -6,11 +6,15 @@ import lombok.RequiredArgsConstructor;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-@RequiredArgsConstructor
+
 @Repository
 public class UserRepositoryImpl implements UserRepository{
 
     private final SqlSession sqlSession;
+
+    public UserRepositoryImpl(SqlSession sqlSession){
+        this.sqlSession = sqlSession;
+    }
 
     @Override
     public void insert(User user) {
