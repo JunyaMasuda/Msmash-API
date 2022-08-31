@@ -4,7 +4,7 @@ import hinatazaka46.smash.Domain.User;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface UserMapper {
+public interface UserMapper2 {
 
     int add(User user);
 }

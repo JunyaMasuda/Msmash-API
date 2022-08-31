@@ -15,14 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("services/v1/user")
+@RequiredArgsConstructor
 public class UserContoroller {
 
 
     private final UserService userService;
-
-    public UserContoroller(UserService userService){
-        this.userService = userService;
-    }
 
     @PostMapping(path="", produces = MediaType.APPLICATION_JSON_VALUE)
     public void add(@RequestBody User user){
