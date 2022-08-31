@@ -15,5 +15,5 @@ spring:
 #    password: root
 #    driver-class-name: com.mysql.cj.jdbc.Driver
 
-#mybatis:
+mybatis:
   mapper-locations: classpath:hinatazaka46/smash/repository/mybatis/*.xml
