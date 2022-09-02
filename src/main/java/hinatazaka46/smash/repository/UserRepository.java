@@ -11,4 +11,9 @@ public interface UserRepository {
      *
      */
     void insert (User user);
+
+    /**
+     * ID指定による1検索削除
+     */
+    void delete(int id);
 }

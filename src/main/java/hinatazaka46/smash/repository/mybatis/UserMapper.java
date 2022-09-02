@@ -7,4 +7,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface UserMapper {
 
     int add(User user);
+
+    int remove(int id);
 }

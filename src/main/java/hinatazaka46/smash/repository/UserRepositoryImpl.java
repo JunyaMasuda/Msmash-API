@@ -17,4 +17,9 @@ public class UserRepositoryImpl implements UserRepository{
     public void insert(User user) {
         this.sqlSession.getMapper(UserMapper.class).add(user);
     }
+
+    @Override
+    public void delete(int id) {
+        this.sqlSession.getMapper(UserMapper.class).remove(id);
+    }
 }

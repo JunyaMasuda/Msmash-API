@@ -20,4 +20,10 @@ public class UserServiceImpl implements UserService{
     public void add(User user) {
         this.userRepository.insert(user);
     }
+
+    @Override
+    @Transactional(rollbackFor = Throwable.class)
+    public void remove(int id) {
+        this.userRepository.delete(id);
+    }
 }
