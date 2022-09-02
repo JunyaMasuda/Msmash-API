@@ -10,6 +10,12 @@
         <result property="image" column="IMAGE"/>
     </resultMap>
 
+    <select id="getById" resultMap="User">
+        SELECT ID, USERNAME, PASSWORD, IMAGE
+        FROM USER
+        WHERE ID = #{userId}
+    </select>
+
     <insert id="add" parameterType="hinatazaka46.smash.Domain.User" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO USER(
         USERNAME,
