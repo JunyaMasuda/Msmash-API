@@ -3,12 +3,9 @@ package hinatazaka46.smash.Controller;
 
 import hinatazaka46.smash.Domain.User;
 import hinatazaka46.smash.service.UserService;
-import java.awt.PageAttributes;
-import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
