@@ -30,7 +30,7 @@
 <!--		application.ymlの設定値をDIで取り込むためのライブラリ-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
