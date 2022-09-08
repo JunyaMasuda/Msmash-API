@@ -18,10 +18,10 @@ public class UserRepositoryImpl implements UserRepository {
     public User getById(int id) {
         User user = this.sqlSession.getMapper(UserMapper.class).getById(id);
         if (user == null) {
-            throw new ResourceNotFoundException("User not Found id:" + id);
+            throw new ResourceNotFoundException("User not Found. id:" + id);
         }
         
-        return this.sqlSession.getMapper(UserMapper.class).getById(id);
+        return user;
     }
     
     @Override

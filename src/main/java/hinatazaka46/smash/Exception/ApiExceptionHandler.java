@@ -17,7 +17,7 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
      * ResourceNotFoundExceptionをハンドリングし、404エラーを返す
      *
      * @param exception 発生した例外
-     * @param request リクエストデータ
+     * @param request   リクエストデータ
      * @return レスポンス(ボディにResource Not Found)
      */
     @ExceptionHandler(ResourceNotFoundException.class)

@@ -16,17 +16,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("services/v1/user")
 @RequiredArgsConstructor
 public class UserController {
-
-
+    
+    
     private final UserService userService;
-
+    
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public User getById(@PathVariable int id) {
         return this.userService.getById(id);
     }
     
-    @PostMapping(path="", produces = MediaType.APPLICATION_JSON_VALUE)
-    public void add(@RequestBody User user){
+    @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
+    public void add(@RequestBody User user) {
         this.userService.add(user);
     }
 }
