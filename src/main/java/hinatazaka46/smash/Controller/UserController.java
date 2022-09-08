@@ -3,7 +3,6 @@ package hinatazaka46.smash.Controller;
 
 import hinatazaka46.smash.Domain.User;
 import hinatazaka46.smash.service.UserService;
-import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;

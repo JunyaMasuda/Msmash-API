@@ -3,9 +3,6 @@ package hinatazaka46.smash.service;
 
 import hinatazaka46.smash.Domain.User;
 import hinatazaka46.smash.repository.UserRepository;
-import hinatazaka46.smash.repository.UserRepositoryImpl;
-import java.util.Optional;
-import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
