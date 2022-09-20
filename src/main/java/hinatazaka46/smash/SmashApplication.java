@@ -6,9 +6,9 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 public class SmashApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(SmashApplication.class, args);
-	}
-
+    
+    public static void main(String[] args) {
+        SpringApplication.run(SmashApplication.class, args);
+    }
+    
 }
