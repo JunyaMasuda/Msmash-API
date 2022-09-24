@@ -10,9 +10,13 @@ import hinatazaka46.smash.Domain.User;
 import hinatazaka46.smash.service.UserServiceImpl;
 import hinatazaka46.smash.util.UnitTestUtil;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentMatcher;
+import org.mockito.ArgumentMatchers;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -40,5 +44,18 @@ public class UserRestControllerTest {
         assertThat(UnitTestUtil.entityToJsonText(excepted)).isEqualTo(
             actual.getResponse().getContentAsString());
         verify(userService, times(1)).getById(1);
+    }
+
+    @Test
+    void userを追加する() throws Exception {
+        User user = new User();
+        Mockito.doNothing().when(userService).add(ArgumentMatchers.any(User.class));
+
+        this.mockMvc.perform(MockMvcRequestBuilders
+                .post("/services/v1/user")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(UnitTestUtil.entityToJsonText(user)));
+
+        Mockito.verify(userService,Mockito.times(1)).add(ArgumentMatchers.any(User.class));
     }
 }

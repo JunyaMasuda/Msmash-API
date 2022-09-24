@@ -12,6 +12,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 class UserServiceImplTest {
@@ -44,6 +45,14 @@ class UserServiceImplTest {
         
         assertThat(excepted).isEqualTo(actual);
         verify(userRepository, times(1)).getById(1);
+    }
+
+    @Test
+    void ユーザを追加する() {
+        User user = new User();
+
+        userService.add(user);
+        verify(userRepository, Mockito.times(1)).insert(user);
     }
     
 }

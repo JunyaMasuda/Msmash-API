@@ -3,6 +3,7 @@ package hinatazaka46.smash.repository;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -14,8 +15,10 @@ import org.apache.ibatis.session.SqlSession;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 public class UserRepositoryImplTest {
@@ -53,6 +56,15 @@ public class UserRepositoryImplTest {
         
         assertThat(excepted).isEqualTo(actual);
         verify(userMapper, times(1)).getById(1);
+    }
+
+    @Test
+    void ユーザを追加する() {
+        User user = new User();
+        doReturn(1).when(userMapper).add(ArgumentMatchers.any(User.class));
+
+        userRepository.insert(user);
+        verify(userMapper, times(1)).add(user);
     }
     
     @Test
